@@ -1,39 +1,46 @@
-const express = require('express');
-const mysql = require('mysql2');
+const { prompt } = require("inquirer");
+const db = require("./db");
+require("console.table");
 
-const PORT = process.env.PORT || 3001;
-const app = express();
+init();
 
-// Express middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+/*  Load Prompts
+function init() {
 
+  loadMainPrompts();
+}
 
+function loadMainPrompts() {
+  prompt([
+    {
+      type: "list",
+      name: "choice",
+      message: "Please choose the following options"
+      choices : [
 
-  app.get('/', (req, res) => {
-    res.json({
-      message: 'Hello World'
-    });
-  });
+        {
+          name: "View Employees",
+          value: "VIEW_EMPLOYEES"
+        },
 
-  // Default response for any other request (Not Found)
-app.use((req, res) => {
-    res.status(404).end();
-  });
+        {
+          name: "View Employees By Department",
+          value: "VIEW_EMPLOYEES_BY DEPARTMENT"
+        },
 
-  // Connect to database
-const db = mysql.createConnection(
-  {
-    host: 'localhost',
-    // Your MySQL username,
-    user: 'root',
-    // Your MySQL password
-    password: '',
-    database: 'election'
-  },
-  console.log('Connected to the election database.')
-);
+        {
+          name: "View Employees By Manager",
+          value: "VIEW_EMPLOYEES_BY_MANAGER"
+        },
 
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
+        {
+          name: "Add Employee"
+          value: "ADD_EMPLOYEE"
+        },
+
+        
+      ]
+    }
+  ])
+}
+*/
