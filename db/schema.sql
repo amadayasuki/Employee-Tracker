@@ -9,16 +9,16 @@ CREATE TABLE department (
 );
 
 CREATE TABLE role (
-    id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     title VARCHAR(30) NOT NULL,
     salary DECIMAL NOT NULL,
-    dept_id INTEGER REFERENCES department(id) ON DELETE SET NULL
+    dept_id INT REFERENCES department(id) ON DELETE SET NULL
 );
 
 CREATE TABLE employee (
-    id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
-    role_id INTEGER REFERENCES roles(id) ON DELETE SET NULL,
-    manager_id INTEGER REFERENCES employee(id)
+    role_id INT REFERENCES roles(id) ON DELETE SET NULL,
+    manager_id INT REFERENCES employee(id)
 );
