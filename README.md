@@ -25,7 +25,7 @@ THEN I am prompted to select an employee to update and their new role and this i
 
 Some screenshots of some of the API routes being tested.
 
-<img src= "" width="500px"/>
+<img src= "https://github.com/amadayasuki/Employee-Tracker/blob/main/Screenshot.png?raw=true" width="500px"/>
 
 
 ## Installation and Start Up
