@@ -4,43 +4,94 @@ require("console.table");
 
 init();
 
-/*  Load Prompts
+/*
+Bonus
+Application allows users to update employee managers 
+Application allows users to view employees by manager 
+Application allows users to view employees by department 
+Application allows users to delete departments, roles, and employees
+Application allows users to view the total utilized budget of a department—in other words, the combined salaries of all employees in that department
+*/
+
+
 function init() {
 
-  loadMainPrompts();
+  promptUser();
 }
 
-function loadMainPrompts() {
+function promptUser() {
   prompt([
     {
       type: "list",
       name: "choice",
-      message: "Please choose the following options"
+      message: "Please choose the following options",
       choices : [
 
-        {
-          name: "View Employees",
-          value: "VIEW_EMPLOYEES"
+         {
+          name: "View All Departments",
+          value: "VIEW_DEPARTMENT"
         },
 
         {
-          name: "View Employees By Department",
-          value: "VIEW_EMPLOYEES_BY DEPARTMENT"
+          name: "View Employee",
+          value: "VIEW_EMPLOYEE"
         },
 
         {
-          name: "View Employees By Manager",
-          value: "VIEW_EMPLOYEES_BY_MANAGER"
+          name: "View Role",
+          value: "VIEW_ROLE"
         },
 
         {
-          name: "Add Employee"
+          name: "Add Department",
+          value: "ADD_DEPARTMENT"
+        },
+
+        {
+          name: "Add Employee",
           value: "ADD_EMPLOYEE"
         },
 
-        
+        {
+          name: "Add Role",
+          value: "ADD_ROLE"
+        },
+
+        {
+          name: "Quit",
+          value: "QUIT"
+        }
       ]
     }
-  ])
+  ]).then(res => {
+    let choice = res.choice;
+    switch (choice) {
+      case "VIEW_DEPARTMENT":
+        viewDepartment();
+        break;
+
+      case "VIEW_EMPLOYEE":
+        viewEmployee();
+        break;
+
+      case "VIEW_ROLE":
+        viewRole();
+        break;
+
+      case "ADD_DEPARTMENT":
+        addDepartment();
+        break;
+      
+      case "ADD_EMPLOYEE":
+        addEmployee();
+        break;
+
+      case "ADD_ROLE":
+          addRole();
+          break;
+
+      default:
+        quit();
+    }
+  })
 }
-*/
