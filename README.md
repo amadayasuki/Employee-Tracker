@@ -23,7 +23,7 @@ THEN I am prompted to select an employee to update and their new role and this i
 ```
 ## Screenshots
 
-Some screenshots of some of the API routes being tested.
+Screenshot of the app in action
 
 <img src= "https://github.com/amadayasuki/Employee-Tracker/blob/main/Screenshot.png?raw=true" width="500px"/>
 
